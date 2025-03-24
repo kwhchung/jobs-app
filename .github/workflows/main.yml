@@ -42,9 +42,8 @@ jobs:
           env: ${{ github.ref == 'refs/heads/master' && 'Production' || 'Preview' }}
       - uses: actions/checkout@v3
       - run: mv .env.example .env
-      - uses: ngduc/vercel-deploy-action@master
+      - uses: amondnet/vercel-action@v25
         with:
-          vercel-cli: vercel
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vercel-args: ${{ github.ref == 'refs/heads/master' && '--prod' || '' }}
