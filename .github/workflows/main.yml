@@ -32,7 +32,6 @@ jobs:
     permissions:
       contents: read
       deployments: write
-      pull-requests: write
     steps:
       - name: start deployment
         uses: bobheadxi/deployments@v1
@@ -46,11 +45,11 @@ jobs:
       - uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           vercel-args: ${{ github.ref == 'refs/heads/master' && '--prod' || '' }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           working-directory: ./
+          github-comment: false
       - name: update deployment status
         uses: bobheadxi/deployments@v1
         if: always()
