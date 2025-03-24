@@ -32,7 +32,6 @@ jobs:
     permissions:
       contents: read
       deployments: write
-      pull-requests: write
     steps:
       - name: start deployment
         uses: bobheadxi/deployments@v1
