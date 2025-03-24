@@ -12,7 +12,8 @@
     "build-storybook": "storybook build",
     "test": "jest",
     "cypress": "cypress open",
-    "typecheck": "tsc --noEmit --pretty"
+    "typecheck": "tsc --noEmit --pretty",
+    "commit": "git add . && git commit -m 'Update' && git push -u origin main"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.13.0",
