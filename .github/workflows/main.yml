@@ -39,16 +39,17 @@ jobs:
         with:
           step: start
           token: ${{ secrets.GITHUB_TOKEN }}
-          env: ${{ fromJSON('["Production", "Preview"]')[github.ref != 'refs/heads/master'] }}
+          env: ${{ github.ref == 'refs/heads/master' && 'Production' || 'Preview' }}
       - uses: actions/checkout@v3
       - run: mv .env.example .env
-      - uses: amondnet/vercel-actions@v25
+      - uses: ngduc/vercel-deploy-action@master
         with:
+          vercel-cli: vercel
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-args: ${{ fromJSON('[":--prod", ""]')[github.ref != 'refs/heads/master'] }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-args: ${{ github.ref == 'refs/heads/master' && '--prod' || '' }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          scope: ${{ secrets.VERCEL_ORG_ID }}
           working-directory: ./
       - name: update deployment status
         uses: bobheadxi/deployment@v1
