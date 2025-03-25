@@ -2,7 +2,7 @@
 
 ## The Book
 React Application Architecture for Production by Alan Alickovic, published by Packt <br/>
-(See https://github.com/PacktPublishing/React-Application-Architecture-for-Production?tab=readme-ov-file)
+(See https://github.com/PacktPublishing/React-Application-Architecture-for-Production)
 
 ## Technology Stack
 - Next.js + TypeScript
