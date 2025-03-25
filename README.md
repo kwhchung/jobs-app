@@ -1,10 +1,10 @@
-## Tutorial Project Following React Application Architecture for Production
+# Tutorial Project Following React Application Architecture for Production
 
-# The Book
+## The Book
 React Application Architecture for Production by Alan Alickovic, published by Packt <br/>
 (See https://github.com/PacktPublishing/React-Application-Architecture-for-Production?tab=readme-ov-file)
 
-# Technology Stack
+## Technology Stack
 - Next.js + TypeScript
 - React Components
   - Chakra UI
